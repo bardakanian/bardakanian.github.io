@@ -76,7 +76,7 @@ a { color: inherit; }
 .hero, .section, footer { max-width: 1200px; margin-inline: auto; }
 .hero {
   display: grid;
-  grid-template-columns: 1.35fr .65fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr);
   gap: 5rem;
   align-items: center;
   min-height: 720px;
