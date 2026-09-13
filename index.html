@@ -6,6 +6,24 @@
   <meta name="description" content="Behnam Ardakanian - MBA candidate and cloud, AI, and customer experience professional.">
   <meta name="theme-color" content="#0b1f33">
   <title>Behnam Ardakanian | MBA Candidate</title>
+  <script>
+    (() => {
+      const allowedThemes = ['system', 'light', 'dark'];
+      let preference = 'system';
+      try {
+        const savedTheme = localStorage.getItem('theme-preference');
+        if (allowedThemes.includes(savedTheme)) preference = savedTheme;
+      } catch (error) {
+        // Continue with the visitor's system preference when storage is unavailable.
+      }
+      const resolvedTheme = preference === 'system'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : preference;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.themePreference = preference;
+      document.documentElement.style.colorScheme = resolvedTheme;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -27,6 +45,15 @@
       <a href="#projects">Projects</a>
       <a href="#leadership">Leadership</a>
       <a href="#education">Education</a>
+      <div class="theme-control">
+        <label class="sr-only" for="theme-select">Color theme</label>
+        <select id="theme-select" aria-label="Color theme">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <span id="theme-status" class="sr-only" aria-live="polite"></span>
+      </div>
       <a class="nav-cta" href="https://www.linkedin.com/in/behnamardakanian" target="_blank" rel="noopener noreferrer">Connect</a>
     </nav>
   </header>

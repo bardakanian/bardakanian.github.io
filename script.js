@@ -1,3 +1,58 @@
+const themeSelect = document.getElementById('theme-select');
+const themeStatus = document.getElementById('theme-status');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const allowedThemes = ['system', 'light', 'dark'];
+
+const getSavedTheme = () => {
+  try {
+    const savedTheme = localStorage.getItem('theme-preference');
+    return allowedThemes.includes(savedTheme) ? savedTheme : 'system';
+  } catch (error) {
+    return 'system';
+  }
+};
+
+const applyTheme = (preference, { persist = false, announce = false } = {}) => {
+  const resolvedTheme = preference === 'system'
+    ? (systemTheme.matches ? 'dark' : 'light')
+    : preference;
+
+  document.documentElement.dataset.theme = resolvedTheme;
+  document.documentElement.dataset.themePreference = preference;
+  document.documentElement.style.colorScheme = resolvedTheme;
+  themeSelect.value = preference;
+  themeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0f1b27' : '#0b1f33');
+
+  if (persist) {
+    try {
+      localStorage.setItem('theme-preference', preference);
+    } catch (error) {
+      // The selected theme still applies for this visit when storage is unavailable.
+    }
+  }
+
+  if (announce) {
+    themeStatus.textContent = `${preference === 'system' ? `System theme, currently ${resolvedTheme}` : `${resolvedTheme} theme`} selected`;
+  }
+};
+
+applyTheme(getSavedTheme());
+
+themeSelect.addEventListener('change', () => {
+  applyTheme(themeSelect.value, { persist: true, announce: true });
+});
+
+systemTheme.addEventListener('change', () => {
+  if (document.documentElement.dataset.themePreference === 'system') {
+    applyTheme('system');
+  }
+});
+
+window.addEventListener('storage', (event) => {
+  if (event.key === 'theme-preference') applyTheme(getSavedTheme());
+});
+
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 const navLabel = navToggle.querySelector('.sr-only');
