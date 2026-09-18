@@ -201,6 +201,8 @@ h3 { font-size: 1.25rem; }
 .contact .eyebrow { color: var(--strong-accent); }
 .contact h2 { max-width: 850px; margin: 0 auto; }
 .contact p:not(.eyebrow) { margin: 1.3rem auto 2rem; color: var(--strong-muted); }
+.opportunity-note { display: grid; gap: .3rem; max-width: 720px; margin: 0 auto 2rem; padding: 1rem 1.25rem; color: var(--strong-muted); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); border-radius: 1rem; }
+.opportunity-note strong { color: var(--strong-text); }
 .button.light { color: var(--navy); background: #fff; border-color: #fff; }
 footer { display: flex; justify-content: space-between; padding: 2.5rem 3rem; color: var(--muted); font-size: .85rem; }
 footer a { text-decoration: none; }
