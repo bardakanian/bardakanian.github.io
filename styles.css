@@ -174,7 +174,7 @@ h3 { font-size: 1.25rem; }
 
 .leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .leadership-card { padding: 2rem; border: 1px solid var(--line); border-radius: 1rem; }
-.project-primary-card { grid-column: 1 / -1; background: var(--feature-surface); }
+#leadership .leadership-card:first-child, .project-primary-card { grid-column: 1 / -1; background: var(--feature-surface); }
 .featured-project-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.45fr); gap: 2rem; align-items: center; background: var(--feature-surface); }
 .featured-project-copy h3 { margin: .35rem 0 .8rem; font-size: clamp(1.6rem, 2.4vw, 2.15rem); }
 .featured-project-copy > p:not(.card-kicker) { color: var(--muted); }
@@ -252,7 +252,7 @@ footer a { text-decoration: none; }
   .timeline-item { grid-template-columns: 1fr; gap: .8rem; }
   .leadership-grid { grid-template-columns: 1fr; }
   .leadership-card, .impact-card { padding: 1.35rem; }
-  .project-primary-card, .featured-project-card { grid-column: auto; }
+  #leadership .leadership-card:first-child, .project-primary-card, .featured-project-card { grid-column: auto; }
   .credential-list > div { grid-template-columns: 1fr; gap: .4rem; }
   .credential-list p, .credential-link { overflow-wrap: anywhere; }
   .button { max-width: 100%; min-height: 44px; justify-content: center; text-align: center; line-height: 1.35; white-space: normal; }
