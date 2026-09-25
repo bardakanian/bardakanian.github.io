@@ -174,14 +174,17 @@ h3 { font-size: 1.25rem; }
 
 .leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .leadership-card { padding: 2rem; border: 1px solid var(--line); border-radius: 1rem; }
-.leadership-card:first-child { grid-column: 1 / -1; background: var(--feature-surface); }
+#leadership .leadership-card:first-child, .project-primary-card { grid-column: 1 / -1; background: var(--feature-surface); }
+.featured-project-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.45fr); gap: 2rem; align-items: center; background: var(--feature-surface); }
+.featured-project-copy h3 { margin: .35rem 0 .8rem; font-size: clamp(1.6rem, 2.4vw, 2.15rem); }
+.featured-project-copy > p:not(.card-kicker) { color: var(--muted); }
 .leadership-card p:last-child { color: var(--muted); }
 .capstone-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; align-items: center; }
 .capstone-copy h3 { margin: .35rem 0 .8rem; font-size: 1.6rem; }
 .project-meta { margin: 1rem 0; color: var(--muted); font-size: .9rem; }
-.poster-preview, .recognition-preview { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: .8rem; background: var(--surface); box-shadow: var(--shadow); }
-.poster-preview img, .recognition-preview img { display: block; width: 100%; height: auto; }
-.poster-preview:focus-visible, .recognition-preview:focus-visible { outline-color: var(--focus); }
+.featured-project-preview, .poster-preview, .recognition-preview { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: .8rem; background: var(--surface); box-shadow: var(--shadow); }
+.featured-project-preview img, .poster-preview img, .recognition-preview img { display: block; width: 100%; height: auto; }
+.featured-project-preview:focus-visible, .poster-preview:focus-visible, .recognition-preview:focus-visible { outline-color: var(--focus); }
 
 .video-panel { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 2rem; align-items: center; margin-top: 1rem; padding: 2rem; color: var(--strong-text); background: var(--strong-surface); border-radius: 1.25rem; box-shadow: var(--shadow); }
 .video-copy h3 { margin: .35rem 0 .8rem; font-size: 1.6rem; }
@@ -231,7 +234,7 @@ footer a { text-decoration: none; }
   .section { padding: 5rem 1.3rem; }
   .about, .experience, .leadership, .credentials { grid-template-columns: 1fr; gap: 3rem; }
   .impact { grid-template-columns: 1fr; }
-  .capstone-card { grid-template-columns: 1fr; }
+  .featured-project-card, .capstone-card { grid-template-columns: 1fr; }
   .video-panel { grid-template-columns: 1fr; padding: 1.5rem; }
   .impact-card { min-height: auto; }
   .impact-number { margin-bottom: 2rem; }
@@ -249,11 +252,11 @@ footer a { text-decoration: none; }
   .timeline-item { grid-template-columns: 1fr; gap: .8rem; }
   .leadership-grid { grid-template-columns: 1fr; }
   .leadership-card, .impact-card { padding: 1.35rem; }
-  .leadership-card:first-child { grid-column: auto; }
+  #leadership .leadership-card:first-child, .project-primary-card, .featured-project-card { grid-column: auto; }
   .credential-list > div { grid-template-columns: 1fr; gap: .4rem; }
   .credential-list p, .credential-link { overflow-wrap: anywhere; }
   .button { max-width: 100%; min-height: 44px; justify-content: center; text-align: center; line-height: 1.35; white-space: normal; }
-  .poster-preview, .recognition-preview { width: 100%; }
+  .featured-project-preview, .poster-preview, .recognition-preview { width: 100%; }
   .video-panel { padding: 1.25rem; }
   .contact { padding: 3.5rem 1.25rem; }
   .contact .button { width: 100%; }
