@@ -178,6 +178,10 @@ h3 { font-size: 1.25rem; }
 .featured-project-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.45fr); gap: 2rem; align-items: center; background: var(--feature-surface); }
 .featured-project-copy h3 { margin: .35rem 0 .8rem; font-size: clamp(1.6rem, 2.4vw, 2.15rem); }
 .featured-project-copy > p:not(.card-kicker) { color: var(--muted); }
+.marginpilot-card { background: var(--surface-soft); }
+.project-secondary-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); gap: 2rem; align-items: start; }
+.project-secondary-card h3 { margin: .35rem 0 0; font-size: 1.45rem; }
+.project-secondary-card > div:last-child p { margin-top: 0; }
 .leadership-card p:last-child { color: var(--muted); }
 .capstone-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; align-items: center; }
 .capstone-copy h3 { margin: .35rem 0 .8rem; font-size: 1.6rem; }
@@ -234,7 +238,7 @@ footer a { text-decoration: none; }
   .section { padding: 5rem 1.3rem; }
   .about, .experience, .leadership, .credentials { grid-template-columns: 1fr; gap: 3rem; }
   .impact { grid-template-columns: 1fr; }
-  .featured-project-card, .capstone-card { grid-template-columns: 1fr; }
+  .featured-project-card, .capstone-card, .project-secondary-card { grid-template-columns: 1fr; }
   .video-panel { grid-template-columns: 1fr; padding: 1.5rem; }
   .impact-card { min-height: auto; }
   .impact-number { margin-bottom: 2rem; }
