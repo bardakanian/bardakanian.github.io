@@ -184,8 +184,8 @@ h3 { font-size: 1.25rem; }
 .featured-project-copy > p:not(.card-kicker) { color: var(--muted); }
 .project-relevance { padding-left: 1rem; border-left: 3px solid var(--accent); }
 .project-relevance strong { color: var(--text); }
-.marginpilot-card { background: var(--surface-soft); }
-.startup-project-card { background: var(--surface); }
+.customer-success-card { background: var(--surface-soft); }
+.marginpilot-card { background: var(--surface); }
 .additional-projects-heading { grid-column: 1 / -1; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .additional-projects-heading h3 { margin: .25rem 0 0; font-size: 1.55rem; }
 .supporting-project-card { display: flex; flex-direction: column; align-items: flex-start; }
