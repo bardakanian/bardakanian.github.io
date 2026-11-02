@@ -186,10 +186,12 @@ h3 { font-size: 1.25rem; }
 .project-relevance strong { color: var(--text); }
 .customer-success-card { background: var(--surface-soft); }
 .marginpilot-card { background: var(--surface); }
-.additional-projects-heading { grid-column: 1 / -1; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-.additional-projects-heading h3 { margin: .25rem 0 0; font-size: 1.55rem; }
-.supporting-project-card { display: flex; flex-direction: column; align-items: flex-start; }
-.supporting-project-card .button { margin-top: auto; }
+.side-projects-card { grid-column: 1 / -1; margin-top: 1rem; }
+.side-projects-card h3 { margin: .25rem 0 1.25rem; font-size: 1.35rem; }
+.side-project-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+.side-project-list a { font-weight: 700; text-decoration: none; }
+.side-project-list a:hover { color: var(--accent); }
+.side-project-list li > span { display: block; margin-top: .35rem; color: var(--muted); font-size: .95rem; }
 .leadership-card p:last-child { color: var(--muted); }
 .capstone-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; align-items: center; }
 .capstone-copy h3 { margin: .35rem 0 .8rem; font-size: 1.6rem; }
@@ -266,6 +268,8 @@ footer a { text-decoration: none; }
   .leadership-grid { grid-template-columns: 1fr; }
   .leadership-card, .impact-card { padding: 1.35rem; }
   #leadership .leadership-card:first-child, .project-primary-card, .featured-project-card { grid-column: auto; }
+  .side-projects-card { grid-column: auto; }
+  .side-project-list { grid-template-columns: 1fr; }
   .credential-list > div { grid-template-columns: 1fr; gap: .4rem; }
   .credential-list p, .credential-link { overflow-wrap: anywhere; }
   .button { max-width: 100%; min-height: 44px; justify-content: center; text-align: center; line-height: 1.35; white-space: normal; }
